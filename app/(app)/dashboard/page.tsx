@@ -102,8 +102,8 @@ export default async function Dashboard({
         {/* Rows */}
         {influencers && influencers.length > 0 ? (
           <div className="flex flex-col">
-            {influencers.map((inf, idx) => {
-              const nameStr = inf.name || inf.username || '?';
+            {influencers.map((inf: any, idx: number) => {
+              const nameStr = String(inf.name || inf.username || '?');
               const initials = Array.from(nameStr)[0].toUpperCase();
               const engagementRate = Number(inf.engagement_rate || 0);
               let engColorClass = 'text-[#9CA3AF] font-medium';

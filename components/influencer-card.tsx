@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export function InfluencerCard({ influencer, campaignId }: { influencer: any, campaignId?: string }) {
-  const nameStr = influencer.name || influencer.username || '?';
+  const nameStr = String(influencer.name || influencer.username || '?');
   const initials = Array.from(nameStr)[0].toUpperCase();
   const formatNum = (n: number) => n >= 1000000 ? (n/1000000).toFixed(1)+'M' : n >= 1000 ? (n/1000).toFixed(1)+'K' : n;
   
